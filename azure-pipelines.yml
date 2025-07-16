@@ -1,0 +1,20 @@
+trigger:
+  branches:
+    include:
+      - main
+      - feature/*
+  paths:
+    include:
+      - src/**
+      - README.md
+    exclude:
+      - docs/**
+      - tests/**
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo "Build triggered on $(Build.SourceBranchName)"
+  displayName: 'Test build'
+
